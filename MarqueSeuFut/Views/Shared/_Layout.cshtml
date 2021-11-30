@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MarqueSeuFut</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.3/datatables.min.css"/>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="imagens/logo.png" alt="">
+            </a>
+        </div>
+
+        <nav>
+            <ul id="menu">
+                <li>
+                    <a asp-area="" asp-controller="" asp-action="Index">Dashboard</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Escalacoes" asp-action="Index">Escale seu time</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Partidas" asp-action="Index">Partidas</a>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Estatisticas" asp-action="Index">Estatísticas</a>
+                </li>
+
+            </ul>
+            <div class="options">
+                
+                <a class="header-icon icon bi bi-search" asp-area="" asp-controller="Pesquisa" asp-action="Index"></a>
+
+                <a class="header-icon icon bi bi-bell"></a>
+                <a class="header-icon icon bi bi-person-circle" asp-area="" asp-controller="Perfis" asp-action="Index"></a>
+                <div class="logout"><a href="#">Sair</a></div>
+
+            </div>
+            <span id="hamburger"></span>
+        </nav>
+
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <footer>
+        <div>
+            <a asp-area="" asp-controller="Home"> &copy; 2021 - Marque Seu Fut</a>
+        </div>
+
+        <div class="terms">
+            <p><a href="#">Termos de Uso</a></p>
+            <i class="icon bi bi-circle-fill"></i>
+            <p><a asp-action="Privacy">Políticas de Privacidade</a></p>
+        </div>
+        <div>
+
+            <div class="social">
+                <a href="#"><i class="icon bi bi-whatsapp"></i></a>
+                <a href="#"><i class="icon bi bi-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.11.3/datatables.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    <script src="~/js/script.js" asp-append-version="true"></script>
+</body>
+</html>

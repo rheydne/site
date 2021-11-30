@@ -1,0 +1,42 @@
+﻿@model MarqueSeuFut.Models.Jogador
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<main>
+    <h1>Apagar Jogador</h1>
+    <br />
+    <br />
+    <h3>Você deseja escluir esse jogador?</h3>
+    <div>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Numero)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Numero)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Posicao)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Posicao.Nome)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Confirmar Exclusão" class="btn btn-danger" /> |
+            <a asp-action="Index">Voltar</a>
+        </form>
+    </div>
+
+</main>

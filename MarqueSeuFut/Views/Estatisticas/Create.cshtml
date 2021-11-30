@@ -1,0 +1,45 @@
+﻿@model MarqueSeuFut.Models.Estatistica
+
+@{
+    ViewData["Title"] = "Estatísticas";
+}
+
+<h3></h3>
+<h2 align="center">Estatísticas</h2>
+
+<h4>Adicionar Informações</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PartidaId" class="control-label"></label>
+                <select asp-for="PartidaId" class="form-control" asp-items="ViewBag.PartidaId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="GolsF" class="control-label"></label>
+                <input asp-for="GolsF" class="form-control" />
+                <span asp-validation-for="GolsF" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GolsS" class="control-label"></label>
+                <input asp-for="GolsS" class="form-control" />
+                <span asp-validation-for="GolsS" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Adicionar" class="btn btn-primary" />
+                <a asp-action="Index">Voltar</a>
+            </div>
+        </form>
+    </div>
+    <h3></h3>
+    <h3></h3>
+    <h3></h3>
+    <h3></h3>
+
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

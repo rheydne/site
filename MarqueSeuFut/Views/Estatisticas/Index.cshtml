@@ -1,0 +1,48 @@
+﻿@model IEnumerable<MarqueSeuFut.Models.Estatistica>
+
+@{
+    ViewData["Title"] = "Estatísticas";
+}
+
+<main>
+<h2 align ="center">Estatísticas</h2>
+
+<p>
+    <a asp-action="Create">Adicionar Informações</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Partida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GolsF)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GolsS)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Partida.TimeCasa.Nome) x @Html.DisplayFor(modelItem => item.Partida.TimeVisitante.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GolsF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GolsS)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Apagar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</main>

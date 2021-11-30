@@ -1,0 +1,37 @@
+﻿@model MarqueSeuFut.Models.Estatistica
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h4></h4>
+<h3>Você tem certeza que deseja apagar essa estatísticas?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Partida)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Partida.TimeCasa.Nome)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GolsF)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GolsF)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GolsS)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GolsS)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Apagar" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar</a>
+    </form>
+</div>

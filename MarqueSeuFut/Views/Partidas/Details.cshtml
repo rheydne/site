@@ -1,0 +1,48 @@
+﻿@model MarqueSeuFut.Models.Partida
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Partida</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Quadra)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Quadra)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TimeCasa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TimeCasa.Localizacao)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TimeVisitante)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TimeVisitante.Localizacao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

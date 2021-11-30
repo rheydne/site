@@ -1,0 +1,223 @@
+﻿@model IEnumerable<MarqueSeuFut.Models.Time>
+
+
+@{
+    ViewData["Title"] = "Perfil";
+}
+<main>
+    <div class="alert alert-success" role="alert">
+        Atenção você tem um evento agendado para o dia 00/00/00.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <h2 align="center">Perfil</h2>
+    <table align="center">
+        <thead>
+            <tr>
+                <td>
+                    @foreach (var shift in ViewBag.Times)
+                    {
+                        <h2>@shift.Nome</h2>
+                    }
+                </td>
+
+            </tr>
+        </thead>
+    </table>
+
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <td>
+
+                    <h4 align="center">Estatísticas</h4>
+                </td>
+                <td>
+                    <h4 align="center">Próximos Confrontos</h4>
+                </td>
+                <td>
+                    <h4 align="center">Informações</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>
+                                    <h5> Vs. </h5>
+
+                                </td>
+                                <td>
+                                    <h5>GF</h5>
+
+                                </td>
+                                <td>
+                                    <h5>GS</h5>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @foreach (var shift in ViewBag.Partidas)
+                                    {
+                                        @shift.TimeCasa.Nome
+
+                                    }
+                                </td>
+                                <td>
+
+                                    @foreach (var shift in ViewBag.Estatisticas)
+                                    {
+
+                                        @shift.GolsF
+
+                                    }
+                                </td>
+                                <td>
+
+                                    @foreach (var shift in ViewBag.Estatisticas)
+                                    {
+                                        @shift.GolsS
+
+                                    }
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    @foreach (var shift2 in ViewBag.Partidas)
+                                    {
+                                        @shift2.TimeCasa.Nome
+                                    }
+                                </td>
+                                <td>
+                                    @foreach (var shift2 in ViewBag.Estatisticas)
+                                    {
+                                        @shift2.GolsF
+
+                                    }
+                                </td>
+                                <td>
+                                    @foreach (var shift2 in ViewBag.Estatisticas)
+                                    {
+                                        @shift2.GolsS
+
+                                    }
+                                </td>
+                            </tr>
+                        </thead>
+                    </table>
+
+                </td>
+
+                <td>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <td>
+                                    <h5> Time </h5>
+                                </td>
+                                <td>
+                                    <h5> Data e Hora</h5>
+                                </td>
+                                <td>
+                                    <h5> Quadra </h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @foreach (var shift in ViewBag.Partidas)
+                                    {
+                                        @shift.TimeCasa.Nome
+
+                                    }
+                                </td>
+                                <td>
+                                    @foreach (var shift in ViewBag.Partidas)
+                                    {
+                                        @shift.Data
+
+                                    }
+                                </td>
+                                <td>
+                                    @foreach (var shift in ViewBag.Partidas)
+                                    {
+                                        @shift.Quadra
+
+                                    }
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @foreach (var shift in ViewBag.Partidas)
+                                    {
+                                        @shift.TimeCasa.Nome
+
+                                    }
+                                </td>
+                                <td>
+                                    @foreach (var shift in ViewBag.Partidas)
+                                    {
+                                        @shift.Data
+
+                                    }
+                                </td>
+                                <td>
+                                    @foreach (var shift in ViewBag.Partidas)
+                                    {
+                                        @shift.Quadra
+
+                                    }
+                                </td>
+                            </tr>
+                        </thead>
+                    </table>
+                </td>
+                <td>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>
+                                    @foreach (var shift in ViewBag.Times)
+                                    {
+                                        @shift.Nome<br>
+                                        @shift.Localizacao<br>
+                                        @shift.AnoFundacao<br>
+                                        @shift.Descricao
+
+                                    }
+                                </td>
+                            </tr>
+                        </thead>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <h4 align="center">Escalação</h4>
+
+                    @foreach (var shift in ViewBag.Escalacao)
+                    {
+                        <li>
+                            @shift.TimeId
+                            @foreach (var shift2 in ViewBag.Jogadores)
+                            {
+
+                            }
+
+                        </li>
+
+                    }
+                </td>
+                <td>
+                </td>
+            </tr>
+        </thead>
+    </table>
+
+</main>

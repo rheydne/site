@@ -1,0 +1,61 @@
+﻿@model IEnumerable<MarqueSeuFut.Models.Escalacao>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<main>
+    <h1>Escalação</h1>
+    <br />
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Adicionar Jogador na Escalação</a>
+        <a asp-controller="Jogadores" asp-action="Index" class="btn btn-primary">Ver Jogadores</a>
+        <a asp-controller="Home" asp-action="Index">Voltar</a>
+    </p>
+    <h2>Titulares</h2>
+    <table class="table">
+        @foreach (var item in Model)
+        {
+            if (item.IsTItular == true)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Jogador.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Jogador.Numero)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Jogador.Posicao.Nome)
+                    </td>
+                    <td>
+                        <a asp-action="Titular" asp-route-id="@item.Id" class="btn btn-primary">Selecionar para reserva</a>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+    <h2>Reservas</h2>
+    <table class="table">
+        @foreach (var item in Model)
+        {
+            if (item.IsTItular == false)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Jogador.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Jogador.Numero)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Jogador.Posicao.Nome)
+                    </td>
+                    <td>
+                        <a asp-action="Titular" asp-route-id="@item.Id" class="btn btn-primary">Selecionar para titular</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Remover</a>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</main>

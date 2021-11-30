@@ -1,0 +1,49 @@
+﻿@model MarqueSeuFut.Models.Partida
+
+@{
+    ViewData["Title"] = "Apagar Partida";
+}
+
+<h4></h4>
+<h4>Você tem certeza que deseja apagar essa partida?</h4>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Data)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Data)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Quadra)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Quadra)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TimeCasa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TimeCasa.Localizacao)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TimeVisitante)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TimeVisitante.Localizacao)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Apagar" class="btn btn-danger" /> |
+        <a asp-action="Index">Voltar</a>
+    </form>
+</div>
